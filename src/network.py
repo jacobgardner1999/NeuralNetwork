@@ -88,6 +88,7 @@ class Network(object):
             delta = np.dot(self.weights[-l+1].transpose(), delta) * sp
             #use the error of each layers to give the gradient of the cost function in terms of b and w
             nabla_b[-l] = delta
+            print(len(delta), activations[-l-1].shape)
             nabla_w[-l] = np.dot(delta, activations[-l-1].transpose())
         return (nabla_b, nabla_w)
 
